@@ -26,6 +26,7 @@
                 <button>7</button>
                 <button>8</button>
                 <button>9</button>
+                <button>0</button>
                 <button>+</button>
                 <button>-</button>
                 <button>*</button>
@@ -34,7 +35,6 @@
                 <button><i class='fas fa-chevron-left' style="color: black;"></i>
                     </button>
                 <button>CLEAR</button>
-
             </div>
         </div>
         <script>
@@ -42,8 +42,8 @@
 var valuecontain=document.getElementById("valuecontainer");
 var symbol=document.getElementById("symbolcontainer");
 var buttons=document.getElementsByTagName("button");
-buttons[14].style.padding="10px 9px 8px 6px";
-buttons[15].style.width="150px"
+buttons[15].style.padding="10px 9px 8px 6px";
+buttons[16].style.width="120px"
 buttons[0].onclick=function()
 {
     valuecontain.value=buttons[0].textContent;
@@ -82,9 +82,8 @@ buttons[8].onclick=function()
 }
 buttons[9].onclick=function()
 {
-    temp=valuecontain.value;
-    valuecontain.value="";
-    symbol.value=buttons[9].textContent;
+    valuecontain.value=valuecontain.value+buttons[9].textContent;
+
 }
 buttons[10].onclick=function()
 {
@@ -105,6 +104,12 @@ buttons[12].onclick=function()
     symbol.value=buttons[12].textContent;
 }
 buttons[13].onclick=function()
+{
+    temp=valuecontain.value;
+    valuecontain.value="";
+    symbol.value=buttons[13].textContent;
+}
+buttons[14].onclick=function()
 {
     if("+"==symbol.value)
     {
@@ -130,7 +135,7 @@ buttons[13].onclick=function()
     else if("/"==symbol.value)
     {
         stud=valuecontain.value;
-    sum=Number(temp)+Number(stud)
+    sum=Number(temp)/Number(stud)
     valuecontain.value="";
    valuecontain.value=sum;
     }
@@ -138,12 +143,12 @@ buttons[13].onclick=function()
 
     }
 }
-buttons[15].onclick=function()
+buttons[16].onclick=function()
 {
     valuecontain.value="";
     symbol.value="";
 }
-buttons[14].onclick=function()
+buttons[15].onclick=function()
 {
 
     var goosy=valuecontain.value;
