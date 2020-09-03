@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>simple calculator</title>
+        <style>
+            #container{background-color: rgb(2, 2, 2);width: 270px;height: 440px;padding:20px;border-radius: 20px;box-shadow: 1px 1px 40px rgb(58, 57, 56);}
+            button{font-size: 30px;border-radius:20px;border: 2px solid black;padding:7px;width: 50px;margin: 2px;cursor: pointer;}
+            #valuecontainer{padding:6px;font-size: 30px;color: black;border-radius: 10px;border:1px solid black;width: 180px;position: absolute;}
+            #symbolcontainer{left: 200px;position: relative;width: 40px;border: 1px solid black;font-size: 30px;border-radius: 20px;padding: 6px 6px 6px 20px;}
+            #buttonscontainer{position: relative;width: 170px;height: 320px;background-color: rgb(255, 153, 0);left: 0px;padding:20px 20px 30px 20px;border-radius: 20px;top: 20px;}
+        </style>
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <meta name="viewport" content="width=deive-width,initial-scale=1.0">
+    </head>
+    <body>
+        <div id="container">
+            <input type="text" id="valuecontainer">
+            <input type="text" id="symbolcontainer" disabled="true">
+            <div id="buttonscontainer">
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button>+</button>
+                <button>-</button>
+                <button>*</button>
+                <button>/</button>
+                <button>=</button>
+                <button><i class='fas fa-chevron-left' style="color: black;"></i>
+                    </button>
+                <button>CLEAR</button>
+
+            </div>
+        </div>
+        <script>
+            var temp;
+var valuecontain=document.getElementById("valuecontainer");
+var symbol=document.getElementById("symbolcontainer");
+var buttons=document.getElementsByTagName("button");
+buttons[14].style.padding="10px 9px 8px 6px";
+buttons[15].style.width="150px"
+buttons[0].onclick=function()
+{
+    valuecontain.value=buttons[0].textContent;
+}
+buttons[1].onclick=function()
+{
+    valuecontain.value=valuecontain.value+buttons[1].textContent;
+}
+buttons[2].onclick=function()
+{
+    valuecontain.value=valuecontain.value+buttons[2].textContent;
+}
+buttons[3].onclick=function()
+{
+    valuecontain.value=valuecontain.value+buttons[3].textContent;
+}
+buttons[4].onclick=function()
+{
+    valuecontain.value=valuecontain.value+buttons[4].textContent;
+}
+buttons[5].onclick=function()
+{
+    valuecontain.value=valuecontain.value+buttons[5].textContent;
+}
+buttons[6].onclick=function()
+{
+    valuecontain.value=valuecontain.value+buttons[6].textContent;
+}
+buttons[7].onclick=function()
+{
+    valuecontain.value=valuecontain.value+buttons[7].textContent;
+}
+buttons[8].onclick=function()
+{
+    valuecontain.value=valuecontain.value+buttons[8].textContent;
+}
+buttons[9].onclick=function()
+{
+    temp=valuecontain.value;
+    valuecontain.value="";
+    symbol.value=buttons[9].textContent;
+}
+buttons[10].onclick=function()
+{
+    temp=valuecontain.value;
+    valuecontain.value="";
+    symbol.value=buttons[10].textContent;
+}
+buttons[11].onclick=function()
+{
+    temp=valuecontain.value;
+    valuecontain.value="";
+    symbol.value=buttons[11].textContent;
+}
+buttons[12].onclick=function()
+{
+    temp=valuecontain.value;
+    valuecontain.value="";
+    symbol.value=buttons[12].textContent;
+}
+buttons[13].onclick=function()
+{
+    if("+"==symbol.value)
+    {
+        stud=valuecontain.value;
+    sum=Number(temp)+Number(stud)
+    valuecontain.value="";
+   valuecontain.value=sum;
+    }
+    else if("-"==symbol.value)
+    {
+        stud=valuecontain.value;
+    sum=Number(temp)-Number(stud)
+    valuecontain.value="";
+   valuecontain.value=sum;
+    }
+    else if("*"==symbol.value)
+    {
+        stud=valuecontain.value;
+    sum=Number(temp)*Number(stud)
+    valuecontain.value="";
+   valuecontain.value=sum;
+    }
+    else if("/"==symbol.value)
+    {
+        stud=valuecontain.value;
+    sum=Number(temp)+Number(stud)
+    valuecontain.value="";
+   valuecontain.value=sum;
+    }
+    else{
+
+    }
+}
+buttons[15].onclick=function()
+{
+    valuecontain.value="";
+    symbol.value="";
+}
+buttons[14].onclick=function()
+{
+
+    var goosy=valuecontain.value;
+    var len=String(valuecontain.value).length
+    valuecontain.value=goosy.substring(0,len-1)
+}
+      </script>
+    </body>
+</html>
